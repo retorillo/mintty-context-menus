@@ -1,0 +1,14 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\EditWithMintty]
+@="Edit with &mintty"
+[HKEY_CLASSES_ROOT\*\shell\EditWithMintty\Command]
+@="cmd /C for %%P in (\"%1\") do (mintty --title %%~nxP -h error -e bash -ic \"if [[ -v EDITOR ]];then $EDITOR %%~nxP;else /usr/bin/vim -n %%~nxP;fi\")"
+[HKEY_CLASSES_ROOT\Directory\shell\OpenWithMintty]
+@="Open with &mintty"
+[HKEY_CLASSES_ROOT\Directory\shell\OpenWithMintty\Command]
+@="cmd /C for %%P in (%1) do (mintty --title %%~nxP -h always -e cd %%~nxP )"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenMintty]
+@="Open &mintty"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenMintty\Command]
+@="cmd /C mintty"

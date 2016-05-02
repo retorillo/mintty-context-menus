@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[-HKEY_CLASSES_ROOT\*\shell\EditWithMintty]
+[-HKEY_CLASSES_ROOT\*\shell\EditWithMintty\Command]
+[-HKEY_CLASSES_ROOT\Directory\shell\OpenWithMintty]
+[-HKEY_CLASSES_ROOT\Directory\shell\OpenWithMintty\Command]
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\OpenMintty]
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\OpenMintty\Command]

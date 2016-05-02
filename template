@@ -1,0 +1,32 @@
+# This file is template to generate install.reg file
+# Run "node build.js"
+
+# "Edit With Mintty" for File Item
+
+HKEY_CLASSES_ROOT\*\shell\EditWithMintty
+Edit with &mintty
+cmd /C for %%P in ("%1") do (
+   mintty --title %%~nxP -h error -e
+      bash -ic "
+         if [[ -v EDITOR ]];
+            then $EDITOR %%~nxP;
+         else
+            /usr/bin/vim -n %%~nxP;
+         fi
+      "
+)
+
+# "Open With Mintty" for Directory Item
+
+HKEY_CLASSES_ROOT\Directory\shell\OpenWithMintty
+Open with &mintty
+cmd /C for %%P in (%1) do (
+   mintty --title %%~nxP -h always -e
+      cd %%~nxP
+)
+
+# "Open Mintty" for Directory Background
+
+HKEY_CLASSES_ROOT\Directory\Background\shell\OpenMintty
+Open &mintty
+cmd /C mintty
